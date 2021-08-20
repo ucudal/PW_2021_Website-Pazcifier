@@ -1,0 +1,19 @@
+{
+  "name": "pw_2021_website-pazcifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucudal/PW_2021_Website-Pazcifier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucudal/PW_2021_Website-Pazcifier/issues"
+  },
+  "homepage": "https://github.com/ucudal/PW_2021_Website-Pazcifier#readme"
+}
