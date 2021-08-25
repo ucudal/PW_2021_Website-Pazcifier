@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ucudal/PW_2021_Website-Pazcifier/issues"
   },
-  "homepage": "https://github.com/ucudal/PW_2021_Website-Pazcifier#readme"
+  "homepage": "https://github.com/ucudal/PW_2021_Website-Pazcifier#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.5"
+  }
 }
