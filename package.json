@@ -6,7 +6,7 @@
   "scripts": {
     "start": "browser-sync start --server --serveStatic 'docs' --files '**/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style.css",
+    "tailwind": "tailwindcss -i ./src/tailwind.css -o ./docs/style.css --jit",
     "tailwind:watch": "npm run tailwind -- --watch"
   },
   "repository": {
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/ucudal/PW_2021_Website-Pazcifier#readme",
   "dependencies": {
-    "browser-sync": "^2.27.5"
+    "@tailwindcss/typography": "^0.4.1",
+    "browser-sync": "^2.27.5",
+    "tailwindcss": "^2.2.11"
   }
 }
