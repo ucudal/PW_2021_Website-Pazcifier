@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-button {
+    @apply px-10 py-3 font-mono text-gray-600 hover:underline
+}
+
+.active {
+    @apply underline text-white
+}
