@@ -16,5 +16,5 @@ module.exports = {
     button: ['responsive', 'hover', 'active'],
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 }
