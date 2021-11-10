@@ -1,3 +1,229 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-button {
+    @apply px-10 py-3 font-mono fill-current text-gray-600 hover:underline
+}
+
+.active {
+    @apply underline fill-current text-white
+}
+
+.modal--hidden {
+  visibility: hidden;
+}
+
+.modal__container--responsive {
+  @apply bottom-top desktop:w-8/12 phone:w-11/12 desktop:px-8 phone:px-4 py-6
+}
+
+.box {
+  @apply desktop:px-16 desktop:py-8 phone:px-6 phone:py-2 text-center border-r-8 border-b-8 border-gray-700 text-white bg-gray-800
+}
+
+.box__title {
+  @apply font-sans font-black desktop:text-8xl phone:text-4xl
+}
+
+.main-photo {
+  @apply desktop:w-max phone:w-6/12 phone:object-center desktop:m-12 phone:my-12 phone:mx-auto p-2 border-4 border-white
+}
+
+.box__subtitle {
+  @apply font-sans font-medium desktop:text-4xl phone:text-2xl
+}
+
+.header--desktop {
+  @apply desktop:flex tablet:flex phone:hidden list-none m-0 p-0
+}
+
+.header--mobile {
+  @apply desktop:hidden tablet:hidden phone:flex phone:justify-between list-none m-0 p-0
+}
+
+.form {
+  @apply space-y-4
+}
+
+.form__label {
+ @apply block desktop:text-left phone:text-center
+}
+
+.form__input {
+  @apply block w-full h-10 p-2 border-b-2 border-gray-600
+}
+
+.form__box {
+  @apply desktop:flex phone:block phone:space-y-4 desktop:space-y-0 desktop:space-x-8
+}
+
+.form__input--textarea {
+  @apply form__input resize-none desktop:h-32 phone:h-32
+}
+
+.button {
+  @apply text-white desktop:px-6 desktop:py-3 phone:px-10 phone:py-6 phone:text-lg font-semibold rounded-lg;
+}
+
+.button-menu {
+  @apply flex items-center justify-center space-x-8
+}
+
+.jobs {
+  @apply bg-blue-600 text-white text-center py-20 shadow-lg
+}
+
+.jobs__title {
+  @apply desktop:text-8xl phone:text-5xl font-black bg-blue-800 px-8 py-2 border-r-8 border-b-8 border-blue-700
+}
+
+.job-box {
+  @apply bg-white text-black space-y-8 mt-4 py-10
+}
+
+.job-box__container {
+  @apply text-center font-mono
+}
+
+.job-box__container__title {
+  @apply font-mono text-6xl font-black
+}
+
+.job-box__container__subtitle {
+  @apply text-xl
+}
+
+.job-box__container__body {
+  @apply italic
+}
+
+.job-box__container__listings {
+  @apply font-sans space-y-2 mt-2
+}
+
+.job-box__container__list {
+  @apply list-outside list-disc phone:mx-2
+}
+
+.job-box__container__listings__summary {
+  @apply text-lg desktop:mx-40 phone:mx-8
+}
+
+.modal {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* z-index: 98; */
+}
+
+.modal__header {
+  @apply mb-6
+}
+
+.modal__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(22, 22, 22, 0.5);
+    /* animation: fadeIn 500ms; */
+    width: 100vw;
+    height: 100vh;
+    /* z-index: 99; */
+}
+
+.modal__container {
+    position: relative;
+    display: grid;
+    /* grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto; */
+    background-color: #f4f4f4;
+    outline: 3px solid transparent;
+    outline-offset: -3px;
+    transform-origin: top center;
+    /* z-index: 100; */
+  
+    /* width: 60%; */
+    max-height: 90%;
+    height: auto;
+  
+    /* animation: fadeIn 240ms;
+    animation: topBottom 350ms; */
+}
+
+.modal__container__body {
+    /* padding-right: 20%;
+    padding-left: 1rem; */
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.1rem;
+    /* grid-row: 2/-2;
+    grid-column: 1/-1; */
+    margin-bottom: 2.5rem;
+    color: #161616;
+    font-weight: 400;
+    /* padding-top: 0.5rem; */
+  }
+
+  .fade-out {
+    animation: fadeOut 500ms;
+  }
+  
+  .bottom-top {
+    animation: bottomTop 500ms;
+  }
+
+  .fade-in--500 {
+    animation: fadeIn 500ms;
+  }
+
+  .fade-in--240 {
+    animation: fadeIn 240ms;
+  }
+  
+  .top-bottom {
+    animation: topBottom 350ms;
+  }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+  
+  @keyframes topBottom {
+    from {
+      transform: translate3d(0, -24px, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+  
+  @keyframes bottomTop {
+    from {
+      transform: translate3d(0, 0, 0);
+      opacity: 100%;
+    }
+    to {
+      transform: translate3d(0, -24px, 0);
+      opacity: 0%;
+    }
+  }

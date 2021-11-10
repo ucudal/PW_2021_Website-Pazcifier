@@ -11,45 +11,171 @@
     <title>Currículum Vitae - José Paz</title>
 </head>
 
-<body class="bg-blue-600">
-    <div class="p-4 flex items-center justify-center bg-blue-900">
-        <div class="text-center">
-            <img class="border-8 border-gray-200 shadow rounded-full w-full sm:max-w-xs hover:border-blue-300"
-                alt="José Paz" src="./assets/imgs/jpaz-cv.jpeg">
-            <button type="button"
-                class="mt-4 shadow px-6 py-2 bg-gray-200 inline-flex items-center hover:bg-blue-300">Hire
-                me!</button>
-        </div>
-        <div class="p-4 text-white font-sans">
-            <p class="text-xl font-black uppercase">
-                José Paz
-            </p>
-            <p>
-                Ingeniero en Informática
-            </p>
-            <hr class="animate-pulse">
-            <p>
-                Perfecto para el trabajo
-            </p>
-            <p class="text-xs">
-                (en serio)
-            </p>
+<body class="bg-gray-900">
+    <header class="bg-white">
+        <ul class="header--desktop">
+            <a href="/docs/index.html">
+                <li><button class="header-button active bg-gray-900">Home</button></li>
+            </a>
+            <a href="/docs/works.html">
+                <li><button class="header-button">Mis trabajos</button></li>
+            </a>
+            <a href="#">
+                <li><button id="contact-button" class="header-button">Contáctame</button></li>
+            </a>
+        </ul>
+        <ul class="header--mobile">
+            <a href="index.html">
+                <li>
+                    <button class="header-button active bg-gray-900">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30" height="30"
+                            class="fill-current text-white" viewBox="0 0 460.45 460.45"
+                            style="enable-background:new 0 0 460.45 460.45;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M444.396,167.33L249.284,6.831C243.747,2.277,236.986,0,230.225,0s-13.522,2.277-19.058,6.831L151.76,55.699V46.34
+			c0-8.284-6.716-15-15-15H64.81c-8.284,0-15,6.716-15,15v93.223L16.055,167.33c-9.781,8.046-13.456,21.369-9.182,33.291
+			c3.711,10.354,12.723,17.715,23.325,19.473V430.45c0,16.569,13.432,30,30,30h103.443c16.568,0,30-13.431,30-30v-76.474
+			c0-5.316,2.297-8.485,3.368-9.296h66.432c1.071,0.811,3.368,3.98,3.368,9.296v76.474c0,16.569,13.431,30,30,30h103.443
+			c16.569,0,30-13.431,30-30V220.095c10.603-1.757,19.614-9.119,23.325-19.473C457.852,188.699,454.177,175.377,444.396,167.33z
+			 M79.81,61.341h41.95v19.037l-41.95,34.508V61.341z M400.253,190.499v239.952H296.809v-76.474
+			c0-21.703-14.693-39.296-32.818-39.296H196.46c-18.125,0-32.818,17.594-32.818,39.296v76.474H60.198V190.499H35.113L230.225,30
+			l195.112,160.499H400.253z" />
+                                </g>
+                            </g>
+                        </svg>
+
+                    </button>
+                </li>
+            </a>
+            <a href="works.html">
+                <li>
+                    <button class="header-button">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="30" widht="30"
+                            viewBox="0 0 458.321 458.321" style="enable-background:new 0 0 458.321 458.321;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <g>
+                                        <path d="M439.831,22.011L229.16,72.403L18.49,22.011C9.036,19.756,0,26.937,0,36.6v333.899c0,6.94,4.761,12.974,11.511,14.589
+				l214.16,51.227c2.194,0.52,4.554,0.579,6.979,0l214.161-51.227c6.75-1.615,11.51-7.648,11.51-14.589V36.6
+				C458.32,26.919,449.269,19.762,439.831,22.011z M214.16,402.716L30,358.665V55.611l184.16,44.051V402.716z M428.32,358.665
+				l-184.16,44.051V99.662l184.16-44.051V358.665z" />
+                                        <path d="M60.645,170.595L179,198.905c8.085,1.931,16.157-3.067,18.078-11.1c1.927-8.056-3.042-16.15-11.099-18.078
+				l-118.355-28.31c-8.06-1.924-16.151,3.043-18.078,11.1S52.588,168.667,60.645,170.595z" />
+                                        <path d="M60.645,231.939L179,260.25c8.085,1.931,16.157-3.067,18.078-11.1c1.927-8.057-3.042-16.15-11.099-18.078L67.624,202.761
+				c-8.06-1.927-16.151,3.043-18.078,11.1S52.588,230.011,60.645,231.939z" />
+                                        <path d="M60.644,293.285L179,321.594c8.08,1.93,16.155-3.062,18.078-11.1c1.927-8.056-3.042-16.15-11.099-18.077l-118.356-28.31
+				c-8.06-1.925-16.15,3.043-18.078,11.1C47.617,283.264,52.587,291.357,60.644,293.285z" />
+                                        <path d="M279.16,198.905l118.356-28.311c8.057-1.928,13.026-10.021,11.099-18.078c-1.927-8.058-10.019-13.023-18.078-11.1
+				L272.18,169.727c-8.057,1.928-13.026,10.021-11.099,18.078C263.006,195.853,271.09,200.833,279.16,198.905z" />
+                                        <path d="M279.16,260.25l118.356-28.311c8.057-1.928,13.026-10.021,11.099-18.078c-1.927-8.058-10.019-13.022-18.078-11.1
+				L272.18,231.072c-8.057,1.928-13.026,10.021-11.099,18.078C263.006,257.197,271.09,262.178,279.16,260.25z" />
+                                        <path d="M279.159,321.594l118.356-28.31c8.057-1.928,13.026-10.021,11.099-18.078c-1.927-8.058-10.021-13.023-18.078-11.1
+				l-118.356,28.31c-8.057,1.928-13.026,10.021-11.099,18.078C263.006,318.542,271.089,323.523,279.159,321.594z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+
+                    </button>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <button class="header-button" id="phone-contact-button">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="30" widht="30"
+                            viewBox="0 0 455.861 455.861" style="enable-background:new 0 0 455.861 455.861;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <g>
+                                        <path d="M52.616,139.032l102.427,88.898L52.616,316.828c-6.162,5.349-6.823,14.68-1.474,20.843
+				c5.349,6.162,14.68,6.821,20.842,1.474l105.6-91.651l40.663,35.292c2.778,2.411,6.231,3.616,9.684,3.616s6.906-1.205,9.684-3.616
+				l40.663-35.292l105.6,91.651c6.162,5.348,15.493,4.688,20.842-1.474c5.349-6.163,4.688-15.494-1.474-20.843L300.819,227.93
+				l102.427-88.898c6.163-5.349,6.823-14.68,1.474-20.843c-5.349-6.163-14.682-6.822-20.842-1.474
+				c-8.592,7.457-146.799,127.408-155.947,135.348c-9.151-7.942-147.358-127.893-155.947-135.348
+				c-6.162-5.348-15.494-4.687-20.842,1.474C45.793,124.352,46.454,133.683,52.616,139.032z" />
+                                        <path d="M441.088,63.154H14.774C6.615,63.154,0,69.77,0,77.929v300.003c0,8.16,6.615,14.774,14.774,14.774h426.313
+				c8.16,0,14.774-6.614,14.774-14.774V77.929C455.862,69.77,449.248,63.154,441.088,63.154z M426.314,363.157h-0.001H29.549V92.703
+				h396.765V363.157z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+
+                    </button>
+                </li>
+            </a>
+        </ul>
+    </header>
+
+    <div>
+        <div class="desktop:flex phone:block items-center justify-center">
+            <img class="main-photo" src="assets/imgs/jpaz-cv.jpeg" alt="José Paz">
+            <!-- <img class="m-12 desktop:w-max phone:w-6/12 phone:object-center phone:mx-auto"
+                src="./assets/imgs/jpaz-cv.jpeg" alt="José Paz"> -->
+            <div class="space-y-4 phone:mx-10 tablet:mx-20">
+                <div class="box">
+                    <h1 class="box__title">Hola!</h1>
+                    <h2 class="box__subtitle">Soy José Paz</h2>
+                </div>
+                <div class="box">
+                    <p class="font-sans text-lg">Soy un ingeniero informático movido por la innovación y
+                        curiosidad. Dedicado siempre a retarme, superarme y aprender cosas nuevas</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-1 text-center">
-        <div class="p-4 text-white font-sans hover:bg-blue-700">
-            <p class="text-xl font-black uppercase">Excelente compañero</p>
-            <p>A todos le cae bien!</p>
-        </div>
-        <div class="p-4 text-white font-sans hover:bg-blue-700">
-            <p class="text-xl font-black uppercase">Feliz y positivo</p>
-            <p>Solo mira esa sonrisa!</p>
-        </div>
-        <div class="p-4 text-white font-sans hover:bg-blue-700">
-            <p class="text-xl font-black uppercase">Ávido en varias tecnologías</p>
-            <p>Odia Java!</p>
+
+    <div class="modal modal--hidden">
+        <div class="modal__backdrop fade-out"></div>
+        <div class="modal__container modal__container--responsive bottom-top">
+            <div class="modal__header">
+                <h3 class="text-xl font-bold">¡Cuéntame de ti!</h3>
+                <p>Envíame un mensaje y te contestaré pronto</p>
+            </div>
+            <div class="modal__container__body">
+                <form class="form">
+                    <div class="form__box">
+                        <div class="w-full">
+                            <label class="form__label" for="name">¿Cómo te llamas?</label>
+                            <input class="form__input" type="text" id="name" name="name">
+                        </div>
+                        <div class="w-full">
+                            <label class="form__label" for="mail">¿Cuál es tu mail?</label>
+                            <input class="form__input" type="text" id="mail" name="mail">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form__label" for="find-me">¿Cómo me encontraste?</label>
+                        <select class="form__input" id="find-me" name="find-me">
+                            <option selected disabled value="default">Elige una opción</option>
+                            <option value="event">Nos conocimos en un evento/meetup</option>
+                            <option value="recommendation">Un conocido te recomendó</option>
+                            <option value="talk">Asistí a una presentación que realizaste</option>
+                            <option value="other">Surfeando por internet</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form__label">Déjame un mensaje</label>
+                        <textarea class="form__input--textarea"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="button-menu">
+                <button class="button bg-blue-500" id="modal-submit-button">Enviar</button>
+                <button class="button bg-red-500" id="modal-close-button">Cerrar</button>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
+<script src="./index.min.js"></script>
