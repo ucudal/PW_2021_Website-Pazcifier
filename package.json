@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start --server --serveStatic 'docs' --files '**/*'",
-    "build": "tsc src/index.ts && npm run uglify",
+    "build": "tsc src/*.ts && npm run uglify",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "tailwindcss -i ./src/tailwind.css -o ./docs/style.css",
     "tailwind:watch": "npm run tailwind -- --watch",
-    "uglify": "uglifyjs ./src/index.js -o ./docs/index.min.js --source-map"
+    "uglify": "uglifyjs ./src/index.js -o ./docs/index.min.js --source-map && uglifyjs ./src/works.js -o ./docs/works.min.js --source-map"
   },
   "repository": {
     "type": "git",

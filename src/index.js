@@ -1,3 +1,40 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var _this = this;
 var checkIfHidden = function (element) {
     if (element.classList.contains('modal--hidden')) {
         backdrop.classList.replace('fade-out', 'fade-in--500');
@@ -13,6 +50,13 @@ var checkIfHidden = function (element) {
         resetForm();
     }
 };
+var checkForCookie = function () {
+    var cookieName = "PW_2021-CV_Contacto=";
+    if (document.cookie) {
+        var name_1 = document.cookie.split("=")[1];
+        document.getElementById('name').value = name_1;
+    }
+};
 var resetForm = function () {
     var inputs = document.querySelectorAll("input");
     var textarea = document.querySelector("textarea");
@@ -22,7 +66,25 @@ var resetForm = function () {
     });
     select.value = "default";
     textarea.value = "";
+    checkForCookie();
 };
+var API_URL = "http://localhost:8080";
+var sendRequest = function (url, method, body, headers) { return __awaiter(_this, void 0, void 0, function () {
+    var response;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, fetch(url, {
+                    method: method,
+                    headers: headers,
+                    credentials: "include",
+                    body: JSON.stringify(body)
+                })];
+            case 1:
+                response = _a.sent();
+                return [2 /*return*/, response.json()];
+        }
+    });
+}); };
 var button = document.getElementById("contact-button");
 var phoneButton = document.getElementById("phone-contact-button");
 var backdrop = document.querySelector(".modal__backdrop");
@@ -42,140 +104,10 @@ modalCloseButton.addEventListener('click', function () {
     checkIfHidden(document.querySelector(".modal"));
 });
 modalSubmitButton.addEventListener('click', function () {
-    checkIfHidden(document.querySelector(".modal"));
+    var name = document.getElementById("name");
+    sendRequest(API_URL + "/enviar-formulario", "POST", { nombreContacto: name.value }, { 'Content-Type': 'application/json' }).then(function (data) {
+        console.log(data);
+        checkIfHidden(document.querySelector(".modal"));
+    });
 });
-// function Form() {
-//     this.users = 1;
-//     this.createdUsers;
-//     this.validator = new Validator();
-//     // const name = document.getElementById("name");
-//     // const surname = document.getElementById("surname");
-//     this.addUser = () => {
-//         let invalid = false;
-//         if (!this.validator.minLength(name.value, 2)) {
-//             console.log("Nombre invalido")
-//             name.classList.replace("form__input", "form__input--error")
-//             invalid = true;
-//         }
-//         if (!this.validator.minLength(surname.value, 2)) {
-//             console.log("apellido invalido")
-//             surname.classList.replace("form__input", "form__input--error")
-//             invalid = true;
-//         }
-//         if (invalid) {
-//             return;
-//         }
-//         const user = { id: this.users, name: name.value, surname: surname.value };
-//         this.createUserElement(user);
-//         this.users++;
-//         this.reset();
-//     }
-//     this.createUserElement = (user) => {
-//         if (!this.createdUsers) {
-//             this.createdUsers = document.createElement("div");
-//             this.createdUsers.classList = "list";
-//         }
-//         const userElement = document.createElement("div");
-//         userElement.classList = "list__element";
-//         userElement.id = user.id;
-//         const userName = document.createElement("p");
-//         userName.textContent = `Nombre: ${user.name}`
-//         const userSurname = document.createElement("p");
-//         userSurname.textContent = `Apellido: ${user.surname}`
-//         const buttonDeleteUser = document.createElement("button");
-//         buttonDeleteUser.classList = "button bg-red-500 absolute right-12 top-2";
-//         buttonDeleteUser.textContent = "Eliminar";
-//         buttonDeleteUser.onclick = () => {
-//             this.deleteUser(user.id);
-//         }
-//         userElement.append(userName);
-//         userElement.append(userSurname);
-//         userElement.append(buttonDeleteUser);
-//         this.createdUsers.append(userElement);
-//         document.body.append(this.createdUsers);
-//     }
-//     this.deleteUsers = () => {
-//         this.createdUsers.remove();
-//         this.createdUsers = null;
-//         this.users = [];
-//     }
-//     this.deleteUser = (id) => {
-//         for (const user of this.createdUsers.children) {
-//             if (id == user.id) {
-//                 user.remove();
-//                 break;
-//             }
-//         }
-//     }
-//     this.reset = () => {
-//         name.value = null;
-//         surname.value = null;
-//         name.classList.replace("form__input--error", "form__input")
-//         surname.classList.replace("form__input--error", "form__input")
-//     }
-// }
-// function Validator() {
-//     this.minLength = (value, length) => value.length > length;
-// }
-// function Modal() {
-//     this.modal;
-//     this.backdrop;
-//     this.showModal = () => {
-//         this.modal = document.createElement('div');
-//         this.backdrop = document.createElement('div')
-//         this.backdrop.className = 'backdrop';
-//         this.backdrop.addEventListener('click', this.closeModal)
-//         const modalContainer = document.createElement('div');
-//         modalContainer.className = 'modal__container'
-//         const modalBody = document.createElement('div');
-//         modalBody.className = "modal__container__body"
-//         const form = document.createElement('form');
-//         const name = document.createElement('input');
-//         const surname = document.createElement('input')
-//         this.modal.append(this.backdrop);
-//         this.modal.append(modalContainer);
-//         document.body.append(this.modal);
-//     }
-//     this.closeModal = () => {
-//         this.modal.remove();
-//         this.modal = null;
-//         this.backdrop.remove();
-//         this.backdrop = null;
-//     }
-// }
-// const button = document.getElementById("contact-button")
-// const phoneButton = document.getElementById("phone-contact-button")
-// const modal = new Modal();
-// button.addEventListener('click', modal.showModal);
-// phoneButton.addEventListener('click', modal.showModal);
-// function showModalHandler() {
-//     if (modal) {
-//         return;
-//     }
-//     modal = document.createElement('div');
-//     modal.className = 'modal';
-//     const modalText = document.createElement('p');
-//     modalText.textContent = 'Are you sure?';
-//     const modalCancelAction = document.createElement('button');
-//     modalCancelAction.textContent = 'Cancel';
-//     modalCancelAction.className = 'btn btn--alt';
-//     modalCancelAction.addEventListener('click', closeModalHandler);
-//     const modalConfirmAction = document.createElement('button');
-//     modalConfirmAction.textContent = 'Confirm';
-//     modalConfirmAction.className = 'btn';
-//     modalConfirmAction.addEventListener('click', closeModalHandler);
-//     modal.append(modalText);
-//     modal.append(modalCancelAction);
-//     modal.append(modalConfirmAction);
-//     document.body.append(modal);
-//     backdrop = document.createElement('div');
-//     backdrop.className = 'backdrop';
-//     backdrop.addEventListener('click', closeModalHandler);
-//     document.body.append(backdrop);
-// }
-// function closeModalHandler() {
-//     modal.remove();
-//     modal = null;
-//     backdrop.remove();
-//     backdrop = null;
-// }
+checkForCookie();
