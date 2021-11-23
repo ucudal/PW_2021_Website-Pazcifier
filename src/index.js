@@ -68,7 +68,7 @@ var resetForm = function () {
     textarea.value = "";
     checkForCookie();
 };
-var API_URL = "http://localhost:8080";
+var API_URL = "https://pw2021-apinode-pazcifier-1.pazcifier.repl.co";
 var sendRequest = function (url, method, body, headers) { return __awaiter(_this, void 0, void 0, function () {
     var response;
     return __generator(this, function (_a) {
