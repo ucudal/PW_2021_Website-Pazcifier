@@ -1,0 +1,31 @@
+{
+  "name": "pw_2021_website-pazcifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*'",
+    "build": "tsc src/*.ts && npm run uglify",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "tailwindcss -i ./src/tailwind.css -o ./docs/style.css",
+    "tailwind:watch": "npm run tailwind -- --watch",
+    "uglify": "uglifyjs ./src/index.js -o ./docs/index.min.js --source-map && uglifyjs ./src/works.js -o ./docs/works.min.js --source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucudal/PW_2021_Website-Pazcifier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucudal/PW_2021_Website-Pazcifier/issues"
+  },
+  "homepage": "https://github.com/ucudal/PW_2021_Website-Pazcifier#readme",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "browser-sync": "^2.27.5",
+    "tailwindcss": "^2.2.11",
+    "typescript": "^4.4.4",
+    "uglify-js": "^3.14.2"
+  }
+}
