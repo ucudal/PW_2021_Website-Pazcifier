@@ -38,7 +38,7 @@ const resetForm = () => {
     checkForCookie();
 }
 
-const API_URL = "https://pw2021-apinode-pazcifier-1.pazcifier.repl.co"
+const API_URL = "https://pw2021-apinode-pazcifier-2.pazcifier.repl.co"
 type Methods = "POST" | "GET" | "PUT" | "PATCH" | "DELETE";
 
 const sendRequest = async (url: string, method: Methods, body?: any, headers?: HeadersInit) => {
